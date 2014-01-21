@@ -1,6 +1,6 @@
 var data = [
   {
-    type: 'Building',
+    type: '1',
     name: 'Depot',
     time: 1,
     points: 1,
