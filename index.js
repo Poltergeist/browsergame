@@ -26,14 +26,24 @@ app.use(function *(next){
   console.log('%s %s - %s', this.method, this.url, ms);
 });
 
-app.use(function *() {
+app.use(function *(next) {
+  var build = 'ready';
+  if ( player.buildings[0].building ){
+    build = player.buildings[0].building;
+  }
   this.body = 'hello world ' +
     tickr.getCurrentTick() +
     ' ' +
     player.name +
     ' ' +
-    player.buildings[0].name;
+    player.buildings[0].name +
+    ' ' +
+    player.buildings[0].level +
+    ' ' +
+    build;
   console.log(player);
+  player.buildings[0].build(tickr.getCurrentTick());
+  yield next;
 });
 
 app.listen(3000);

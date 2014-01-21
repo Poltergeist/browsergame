@@ -4,7 +4,7 @@ var data = [
     name: 'Depot',
     time: 1,
     points: 1,
-    level: 1
+    level: 0
   }
 ];
 
